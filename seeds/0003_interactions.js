@@ -1,17 +1,17 @@
-const moment = require("moment");
+const { format, parse, isAfter, addMinutes } = require("date-fns");
 
 function randomInt(min = 0, max = 1) {
-    return Math.floor(Math.random() * (max + 1));
+    return min + Math.floor(Math.random() * (max + 1 - min));
 }
 
 function randomInteraction(post) {
-    const postDate = moment(post.createdAt);
-    const interactionDate = postDate.add(randomInt(0, 1000), 'minutes');
+    const postDate = parse(post.createdAt, "yyyy-MM-dd HH:mm:ss", new Date());
+    const interactionDate = addMinutes(postDate, randomInt(0, 1000));
     const interactionType = ['LIKE', 'LIKE', 'DISLIKE'][randomInt(0, 2)];
 
     return {
         interactionType: interactionType,
-        date: interactionDate,
+        date: format(interactionDate, "yyyy-MM-dd HH:mm:ss"),
         userId: randomInt(1, 100),
         postId: post.id,
     }
@@ -26,7 +26,7 @@ function generateInteractions(post, number) {
             continue;
         }
 
-        if (newInteraction.date.isAfter(moment.now())) {
+        if (isAfter(newInteraction.date, new Date())) {
             continue;
         }
 

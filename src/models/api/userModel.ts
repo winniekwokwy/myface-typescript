@@ -1,10 +1,8 @@
-import moment from "moment";
-
 interface UserPostModel {
     id: number;
     message: string;
     imageUrl: string;
-    createdAt: moment.Moment;
+    createdAt: Date;
 }
 
 export interface UserModel {

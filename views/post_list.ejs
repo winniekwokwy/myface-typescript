@@ -6,7 +6,7 @@
 <ol>
     <% results.forEach(function(post) {%>
         <li>
-            <%= post.message %>
+            <%= post.message %> - <%= post.createdAt.getDay() %>
         </li>
     <% }); %>
 </ol>
