@@ -4,9 +4,9 @@
 <body>
 <h1>Posts</h1>
 <ol>
-    <% results.forEach(function(post) {%>
+    <% postList.results.forEach(function(post) {%>
         <li>
-            <%= post.message %> - <%= post.createdAt.getDay() %>
+            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
         </li>
     <% }); %>
 </ol>
