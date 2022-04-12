@@ -1,4 +1,4 @@
 export interface CreatePostRequest {
-    message: string;
-    imageUrl: string;
+  message: string;
+  imageUrl: string;
 }
