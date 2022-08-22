@@ -25,8 +25,9 @@ function generateInteractions(post, number) {
     if (interactions.some((i) => i.userId === newInteraction.userId)) {
       continue;
     }
-
-    if (isAfter(newInteraction.date, new Date())) {
+    
+    const newInteractionDate = parse(newInteraction.date, "yyyy-MM-dd HH:mm:ss", new Date());
+    if (isAfter(newInteractionDate, new Date())) {
       continue;
     }
 
