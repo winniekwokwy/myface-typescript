@@ -10,6 +10,12 @@
                 <li>
                     <span><%= post.postedBy.username %></span>: <%= post.message %> - posted at <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
                 </li>
+                <form method="post" action="/posts/<%= post.id %>/like/" >
+                    <button type="submit" >Like</button>
+                </form>
+                <form method="post" action="/posts/<%= post.id %>/dislike/" >
+                    <button type="submit" >Dislike</button>
+                </form>
                 <p> <%= post.likedBy.length %> likes and <%= post.dislikedBy.length %> dislikes</p> 
                 <a href="">Liked by</a>
                 <ul>

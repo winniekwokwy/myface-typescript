@@ -5,12 +5,12 @@
 <h1>Create Post</h1>
 <form method="post" action="/posts/create/">
     <label>
-        message:
-        <input type="text" name="message"/>
+        Message:
+        <input type="text" name="message" required/>
     </label>
     <label>
-        imageUrl:
-        <input type="text" name="imageUrl"/>
+        Image Url:
+        <input type="url" name="imageUrl" required/>
     </label>
     <button type="submit">Submit</button>
 </form>
