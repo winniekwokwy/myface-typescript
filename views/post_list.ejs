@@ -2,41 +2,48 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
+    <h1>Posts</h1>
     <main>
-        <h1>Posts</h1>
         <ol>
             <% postList.results.forEach(function(post) {%>
                 <img src="<%= post.imageUrl %>">
                 <li class="caption">
-                    <span class="username"><%= post.postedBy.username %></span>: <%= post.message %> - posted at <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
+                    <span class="username"><%= post.postedBy.username %></span><%= post.message %> - posted at <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
                 </li>
-                <form method="post" action="/posts/<%= post.id %>/like/" >
-                    <button type="submit" >Like</button>
-                </form>
-                <form method="post" action="/posts/<%= post.id %>/dislike/" >
-                    <button type="submit" >Dislike</button>
-                </form>
+                <div class="container"> 
+                    <form method="post" action="/posts/<%= post.id %>/like/" >
+                        <button id="like-button" type="submit" >Like</button>
+                    </form>
+                    <form method="post" action="/posts/<%= post.id %>/dislike/" >
+                        <button id="dislike-button" type="submit" >Dislike</button>
+                    </form>
+
+                </div>
+               
                 <p> <%= post.likedBy.length %> likes and <%= post.dislikedBy.length %> dislikes</p> 
-                <a href="">Liked by</a>
-                <ul>
-                    <% post.likedBy.forEach(function(like) {%>
-                        <li>
-                            <%= like.username %>
-                        </li>
-                    <% }); %>
-                </ul>
-                <a href="">Disliked by</a>
-                <ul>
-                    <% post.dislikedBy.forEach(function(dislike) {%>
-                        <li>
-                            <%= dislike.username %>
-                        </li>
-                    <% }); %>
-                </ul>
+                <div class="border">
+                        <a href="">Liked by</a>
+                        <ul>
+                            <% post.likedBy.forEach(function(like) {%>
+                                <li>
+                                    <%= like.username %>
+                                </li>
+                            <% }); %>
+                        </ul>
+                        <a href="">Disliked by</a>
+                        <ul>
+                            <% post.dislikedBy.forEach(function(dislike) {%>
+                                <li>
+                                    <%= dislike.username %>
+                                </li>
+                            <% }); %>
+                        </ul>
+
+                </div>
             <% }); %>
         </ol>
     </main>
-    <nav>
+    <nav class="bottom-nav">
         <a href="<%= postList.previous %>">Previous</a>
         <a href="<%= postList.next %>">Next</a>
     </nav>

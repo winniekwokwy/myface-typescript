@@ -1,17 +1,79 @@
 /* Add your styles here. */
+html {
+    font-family: 'verdana', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: lightblue;
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    padding-right: 15px;
+}
+
+a:hover {
+    color: hotpink;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+h1 {
+    text-align: center;
+}
+
 body {
-    max-width: 100%;
-    margin: auto;
+    position: relative;
+    top: 90px;
 }
 
 main {
-    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
+.container {
+    display: flex;
+    gap: 10px;
+}
+
+
 img {
-    min-width: 300px;
-    width: 50%;
-    height: auto;
+    padding-top: 30px;
+}
+
+.border {
+    padding-bottom: 30px;
+    border-bottom: solid;
+}
+
+ul {
+    padding-bottom: 10px;
+}
+
+ol {
+    width: 100%;
+}
+
+ol, ul {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .username {
@@ -20,8 +82,55 @@ img {
 
 ol li {
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .caption {
-    text-align: left;
+    padding: 10px 0;
+}
+
+button {
+    background-color: white;
+}
+
+#like-button, #dislike-button {
+    font-size: larger;
+    border-radius: 5px;
+}
+
+#like-button:hover {
+    background-color: rgb(104, 154, 104);
+    font-style: bold;
+}
+
+#dislike-button:hover {
+    background-color: rgb(254, 124, 124);
+    font-style: bold;
+}
+
+#like-button:focus {
+    background-color: green;
+    font-weight: bold;
+}
+
+#dislike-button:focus {
+    background-color: red;
+    font-weight: bold;
+}
+
+.bottom-nav {
+    padding-bottom: 20px;
+}
+
+@media screen and (min-width: 800px) {
+    ol {
+      width: 90%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    ol {
+      width: 70%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
 }
