@@ -1,1 +1,27 @@
 /* Add your styles here. */
+body {
+    max-width: 100%;
+    margin: auto;
+}
+
+main {
+    padding: 0 20px;
+}
+
+img {
+    min-width: 300px;
+    width: 50%;
+    height: auto;
+}
+
+.username {
+    font-weight: bold;
+}
+
+ol li {
+    list-style: none;
+}
+
+.caption {
+    text-align: left;
+}

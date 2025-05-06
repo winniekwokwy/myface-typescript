@@ -7,8 +7,8 @@
         <ol>
             <% postList.results.forEach(function(post) {%>
                 <img src="<%= post.imageUrl %>">
-                <li>
-                    <span><%= post.postedBy.username %></span>: <%= post.message %> - posted at <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
+                <li class="caption">
+                    <span class="username"><%= post.postedBy.username %></span>: <%= post.message %> - posted at <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
                 </li>
                 <form method="post" action="/posts/<%= post.id %>/like/" >
                     <button type="submit" >Like</button>
