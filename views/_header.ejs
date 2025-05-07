@@ -1,8 +1,25 @@
 <header>
-    <nav>
+    <span class="openbtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <nav id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a class="logo" href="/posts">MyFace</a>
+        <a href="/posts">Home</a>
         <a href="/posts">Posts</a>
         <a href="/users">Users</a>
-        <a href="/posts/create/">Create Post</a>
-        <a href="/users/create/">Create User</a>
+        <a class="new-post" href="/posts/create/">+ New Post</a>
+        <img src="https://www.techswitch.co.uk/hs-fs/hubfs/Color%20logo%20-%20no%20background.png?width=1000&height=383&name=Color%20logo%20-%20no%20background.png">
+        <img src="https://www.softwire.com/wp-content/uploads/2022/10/softwire-logo.png">
     </nav>
 </header>
+
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "240px";
+      document.getElementById("main").style.filter = "blur(8px)";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.filter = "none";
+    }
+</script>

@@ -3,16 +3,16 @@
 <%- include('_header') -%>
 <body>
 <h1>Create Post</h1>
-<form method="post" action="/posts/create/">
-    <label>
+<form class="create-forms" method="post" action="/posts/create/">
+    <label class="create-forms-lb">
         Message:
         <input type="text" name="message" required/>
     </label>
-    <label>
+    <label class="create-forms-lb">
         Image Url:
         <input type="url" name="imageUrl" required/>
     </label>
-    <button type="submit">Submit</button>
+    <button id="create-post-btn" type="submit">Submit</button>
 </form>
 </body>
 <%- include('_footer') -%>
