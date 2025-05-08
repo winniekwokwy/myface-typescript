@@ -2,9 +2,9 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-    
     <main id="main">
         <h1>Posts</h1>
+        <button id="change-color">Change colour</button>
         <ol>
             <% postList.results.forEach(function(post) {%>
                 <img src="<%= post.imageUrl %>">
@@ -13,10 +13,13 @@
                         <span class="username"><%= post.postedBy.username %></span><%= post.message %> - posted at <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
                     </li>
                     <div class="container"> 
-                        <form method="post" action="/posts/<%= post.id %>/like/" >
+                        <form id="like" method="post" action="/posts/<%= post.id %>/like/" >
                             <button id="like-button" type="submit" >Like</button>
                         </form>
-                        <form method="post" action="/posts/<%= post.id %>/dislike/" >
+                        <form id="<%= post.id %>" method="post" action="/posts/<%= post.id %>/dislike/" >
+                            <!--
+                            <input id="post-id" name="post-id">=post.id</input>
+                        -->
                             <button id="dislike-button" type="submit" >Dislike</button>
                         </form>
                     </div>
@@ -40,11 +43,12 @@
                 </div>
             <% }); %>
         </ol>
-    </main>
-    <div class="bottom-nav">
+        <div class="bottom-nav">
         <a href="<%= postList.previous %>">Previous</a>
         <a href="<%= postList.next %>">Next</a>
     </div>
+    </main>
+
 </body>
 <%- include('_footer') -%>
 </html>

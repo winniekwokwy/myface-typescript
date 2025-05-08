@@ -52,7 +52,7 @@ footer img {
     color: #f1f1f1;
 }
   
-.sidenav .closebtn {
+.sidenav #closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -62,12 +62,12 @@ footer img {
 
 .sidenav .logo {
     font-size: 24px;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .sidenav .new-post {
     padding-top: 24px;
-    padding-bottom: 150px;
+    margin-bottom: 150px;
 }
 
 a {
@@ -128,7 +128,7 @@ ol, ul {
 }
 
 .caption-background {
-    background-color: #151820;
+    background: #151820;
     padding: 24px;
 }
 
@@ -168,7 +168,8 @@ button {
     font-weight: bold;
 }
 
-#create-post-btn {
+#create-post-btn, 
+#change-color {
     background-color: #252a38;
     color: #2985ff;
     border-color: #2985ff;
@@ -210,6 +211,7 @@ input{
     }
     .create-forms {
         max-width:400px;
+        width: 100%;
     }
 }
 
@@ -223,11 +225,14 @@ input{
         width: 100%;
     }
 
+    main {
+        padding-bottom: 120px;
+    }
     
     footer {
         display: flex;
         justify-content: space-evenly;
-        position: fixed;
+        position: absolute;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -240,10 +245,11 @@ input{
 
     .create-forms {
         max-width:500px;
+        width: 100%;
     }
 
-    .sidenav .closebtn,
-    .openbtn, .sidenav img {
+    .sidenav #closebtn,
+    #openbtn, .sidenav img {
         display: none;
     }
 
@@ -266,13 +272,13 @@ input{
     }
     .sidenav .logo {
         flex-grow: 2;
-        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     .sidenav .new-post {
         flex-grow: 2;
         padding-top: 0;
-        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
     nav {
