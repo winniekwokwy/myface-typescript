@@ -52,7 +52,7 @@ footer img {
     color: #f1f1f1;
 }
   
-.sidenav .closebtn {
+.sidenav #closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -62,12 +62,12 @@ footer img {
 
 .sidenav .logo {
     font-size: 24px;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .sidenav .new-post {
     padding-top: 24px;
-    padding-bottom: 150px;
+    margin-bottom: 150px;
 }
 
 a {
@@ -128,7 +128,7 @@ ol, ul {
 }
 
 .caption-background {
-    background-color: #151820;
+    background: #151820;
     padding: 24px;
 }
 
@@ -242,8 +242,8 @@ input{
         max-width:500px;
     }
 
-    .sidenav .closebtn,
-    .openbtn, .sidenav img {
+    .sidenav #closebtn,
+    #openbtn, .sidenav img {
         display: none;
     }
 
