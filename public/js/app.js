@@ -34,9 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const likeBtn = document.querySelectorAll('.like-button');
+  if(likeBtn) {
     for (const btn of likeBtn){
       btn.addEventListener("click", () => updateCount(btn.dataset.postId));
   }
+}
   
   async function updateCount(postId){
     const response = await fetch(`http://localhost:3001/posts/${postId}/like/`, {

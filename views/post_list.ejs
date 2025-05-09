@@ -16,7 +16,7 @@
                         <!--
                         <form id="like" method="post" action="/posts= post.id %>/like/" >
                         -->
-                            <button class="like-button" type="button" id="<%=post.id%>">Like</button>
+                            <button class="like-button" type="button" data-post-Id="<%=post.id%>">Like</button>
                         <!--</form>-->
                         <form id="<%= post.id %>" method="post" action="/posts/<%= post.id %>/dislike/" >
                             <!--
