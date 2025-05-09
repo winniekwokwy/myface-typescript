@@ -13,9 +13,11 @@
                         <span class="username"><%= post.postedBy.username %></span><%= post.message %> - posted at <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
                     </li>
                     <div class="container"> 
-                        <form id="like" method="post" action="/posts/<%= post.id %>/like/" >
-                            <button id="like-button" type="submit" >Like</button>
-                        </form>
+                        <!--
+                        <form id="like" method="post" action="/posts= post.id %>/like/" >
+                        -->
+                            <button class="like-button" type="button" id="<%=post.id%>">Like</button>
+                        <!--</form>-->
                         <form id="<%= post.id %>" method="post" action="/posts/<%= post.id %>/dislike/" >
                             <!--
                             <input id="post-id" name="post-id">=post.id</input>

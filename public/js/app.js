@@ -33,6 +33,21 @@ document.addEventListener("DOMContentLoaded", function () {
     main.removeEventListener("click", closeNav);
   }
 
+  const likeBtn = document.querySelectorAll('.like-button');
+    for (const btn of likeBtn){
+      btn.addEventListener("click", () => updateCount(btn.dataset.postId));
+  }
+  
+  async function updateCount(postId){
+    const response = await fetch(`http://localhost:3001/posts/${postId}/like/`, {
+      method: "POST",
+      headers: {"Content-Type" : "application"}
+    })
+    console.log(response)
+    //.then(response => response.json())       // convert response to JSON
+    //.then(json => console.log(json)); 
+  }
+  
   /*
   const form = document.getElementById('like');
 
